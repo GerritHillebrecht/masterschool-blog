@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterschool Blog</title>
+
+    <link rel="dns-prefetch" href="fonts.googleapis.com">
+    <link rel="dns-prefetch" href="cdn.jsdelivr.net">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href={{ url_for(
+    "static", filename="css/global.css") }}>
+    <link rel="stylesheet" href={{ url_for(
+    "static", filename="css/add-blog-post.css") }}>
+
+</head>
+<body>
+<main
+        class="p-4 position-relative d-grid align-items-center"
+        style="height: 100vh; width: 100vw; max-width: 100vw; background-image: url('{{url_for(
+            "static",
+            filename="images/add-blog-post.jpg"
+        )}}');
+        background-size: cover; background-position: center"
+>
+<div class="main-container">
+    <div class="card p-4 shadow ">
+        <h1 class="display-5">My Story</h1>
+        <form method="post" action="/add">
+            <label for="author" class="form-label">Author</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="authorhelp">🧔</span>
+                <input type="text" class="form-control" id="author" name="author" aria-describedby="authorhelp"
+                       required>
+                <!--                <div id="authorhelp" class="form-text">Your name will be visible publicly.</div>-->
+            </div>
+            <label for="title" class="form-label">Title</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">🖹</span>
+                <input type="text" class="form-control" id="title" name="title" aria-describedby="basic-addon1"
+                       required>
+            </div>
+            <label for="content" class="form-label">Content</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="contentment">📕</span>
+                <textarea name="content" class="form-control" id="content" rows="3"
+                          aria-describedby="contentment" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Blogpost</button>
+        </form>
+    </div>
+    <div class="d-flex flex-column text-white justify-content-center p-4 h-100 position-relative"
+         style="max-width: 700px">
+        <h1 class="display-2" style="font-weight: 700">Create engaging content</h1>
+        <p class="lead">
+            Creating an engaging blog post can transform readers' perspectives, offering them fresh insights and
+            sparking meaningful conversations. Every word you write can bridge distances, connect hearts, and build a
+            community around shared passions. By sharing your unique voice and stories, you inspire others and leave a
+            lasting impact on the world.
+        </p>
+    </div>
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>

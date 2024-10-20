@@ -9,7 +9,7 @@ FILE_PATH = path.join(getcwd(), STORAGE_PATH, STORAGE_FILE)
 
 def read_from_file() -> list[dict]:
     with open(FILE_PATH, "r") as handle:
-        return loads(handle.read())
+        return loads(handle.read() or "[]")
 
 
 def write_to_file(users: list[dict]):

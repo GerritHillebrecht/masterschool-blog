@@ -1,14 +1,14 @@
 [
   {
-    "id": 1,
-    "author": "John Doe",
-    "title": "First Post",
-    "content": "This is my first post."
+    "id": "6b701ef6-e59b-4789-b2ea-e72f9afe98e1",
+    "title": "my darkest place",
+    "author": "Me of course",
+    "content": "In the cold, quiet attic, memories of loss whispered through the shadows. Alone with his thoughts, Jack faced the abyss within. Yet, amidst the darkness, a tiny flame of hope flickered, refusing to be extinguished. \ud83d\udd25\ud83c\udf11"
   },
   {
-    "id": 2,
-    "author": "Jane Doe",
-    "title": "Second Post",
-    "content": "This is another post."
+    "id": "4b2993a4-c83c-40d6-8163-abbbb3de94fb",
+    "title": "A place of sanity",
+    "author": "Me of course",
+    "content": "In a busy world, Mia found peace in an abandoned library. Sunlight danced on dusty pages as she read tales of adventure. This haven, a place of sanity, reminded her that magic still exists between the lines. \ud83d\udcda\u2728"
   }
 ]

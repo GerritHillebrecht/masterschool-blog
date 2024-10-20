@@ -1,0 +1,19 @@
+main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    opacity: 0.55;
+}
+
+.main-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+    width: 100%;
+    max-width: var(--max-content-width);
+    margin-inline: auto;
+}
+

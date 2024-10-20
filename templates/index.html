@@ -25,6 +25,7 @@
 <body>
 <main>
     <h1>Hallo Welt</h1>
+    <a href="/add" class="btn btn-secondary mb-3">Add new blog-post</a>
     <div class="blog-posts">
         {% for post in posts %}
         <a href="/post/{{post.get("id")}}" class="card mb-3" style="text-underline: none">
@@ -36,7 +37,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{post.get("title")}}</h5>
                         <p class="card-text">{{post.get("content")}}</p>
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        <p class="card-text">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </p>
                     </div>
                 </div>
             </div>
