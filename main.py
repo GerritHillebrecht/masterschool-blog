@@ -38,8 +38,8 @@ def route_post_add():
     return render_template("add.html")
 
 
-@app.route("/post/<int:post_id>")
-def route_post_id(post_id: int):
+@app.route("/post/<string:post_id>")
+def route_post_id(post_id: str):
     blog_posts = read_from_file()
     blog_post = next(
         blog_post
@@ -48,6 +48,18 @@ def route_post_id(post_id: int):
     )
 
     return render_template("blog-post.html", post=blog_post)
+
+
+@app.route("/delete/<string:post_uuid>")
+def route_delete_post(post_uuid):
+    blog_posts = list(
+        blog_post
+        for blog_post in read_from_file()
+        if blog_post["id"] != post_uuid
+    )
+    write_to_file(blog_posts)
+
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
