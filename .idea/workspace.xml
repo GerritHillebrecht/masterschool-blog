@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abf226cc-1868-4344-a81a-705cbc81cfde" name="Changes" comment="[feat] added remove route">
-      <change afterPath="$PROJECT_DIR$/static/css/blog-post-update.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/blog-post.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/blog-post.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/update.html" afterDir="false" />
+    <list default="true" id="abf226cc-1868-4344-a81a-705cbc81cfde" name="Changes" comment="[feat] added update functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/blog-posts.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/blog-posts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/posts.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/posts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729461237414</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[feat] added update functionality">
+      <option name="closed" value="true" />
+      <created>1730296650411</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730296650413</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -158,6 +157,7 @@
     <MESSAGE value="[feat] added index route, global css, included bootstrap" />
     <MESSAGE value="[feat] added add route" />
     <MESSAGE value="[feat] added remove route" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] added remove route" />
+    <MESSAGE value="[feat] added update functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] added update functionality" />
   </component>
 </project>

@@ -1,7 +1,9 @@
 from uuid import uuid4
 
+import humanize
 from flask import Flask, request, render_template, redirect, url_for
 from slugify import slugify
+from datetime import datetime
 
 from storage import read_from_file, write_to_file
 
@@ -14,6 +16,13 @@ DEFAULT_IMAGE = "https://plus.unsplash.com/premium_photo-1678900924337-51991a683
 @app.get('/')
 def index():
     blog_posts = read_from_file()
+    for post in blog_posts:
+        post["created_at"] = humanize.naturalday(
+            datetime.fromisoformat(post.get("created_at", datetime.now().isoformat()))
+        )
+        post["updated_at"] = humanize.naturalday(
+            datetime.fromisoformat(post.get("updated_at", datetime.now().isoformat()))
+        )
     return render_template('index.html', posts=blog_posts)
 
 
@@ -52,7 +61,9 @@ def route_post_add_template():
         "title": title,
         "author": author,
         "content": content,
-        "image": DEFAULT_IMAGE
+        "image": DEFAULT_IMAGE,
+        "created_at": datetime.now().isoformat(),
+        "updated_at": datetime.now().isoformat(),
     })
     write_to_file(blog_posts)
 
@@ -63,15 +74,13 @@ def route_post_add_template():
 @app.get("/update/<string:post_uuid>")
 def route_update_post_template(post_uuid):
     posts = read_from_file()
-    print("seached uuid", post_uuid)
-    for p in posts:
-        print("uuid", p.get("uuid"))
+
     post = next(
         p
         for p in posts
         if p.get("uuid") == post_uuid
     )
-    print("looked up post:", post)
+
     return render_template("update.html", post=post)
 
 
@@ -84,8 +93,6 @@ def route_update_post(post_uuid):
         for post in read_from_file()
         if post.get("uuid") == post_uuid
     )
-
-    print("Existing post: ", existing_post)
 
     author = request.form.get("author") or existing_post.get("author", "Unknown")
     title = request.form.get("title") or existing_post.get("title", "No title given")
@@ -100,17 +107,14 @@ def route_update_post(post_uuid):
         "slug": slug,
         "content": content,
         "image": image,
+        "updated_at": datetime.now().isoformat(),
     }
-
-    print("What the fuck?", post)
 
     updated_posts = list(
         post
         for post in read_from_file()
         if post.get("uuid") != post_uuid
     )
-
-    print("updated posts?", updated_posts)
 
     updated_posts.append(post)
     write_to_file(updated_posts)
@@ -127,6 +131,25 @@ def route_delete_post(post_uuid):
         if blog_post.get("uuid") != post_uuid
     )
     write_to_file(blog_posts)
+
+    return redirect(url_for('index'))
+
+
+@app.get("/like/<string:post_uuid>")
+def route_add_like(post_uuid: str):
+    posts = read_from_file()
+
+    post = next((
+        post
+        for post in posts
+        if post.get("uuid") == post_uuid
+    ), None)
+
+    if post:
+        post["likes"] = post.get("likes", 0) + 1
+        pass
+
+    write_to_file(posts)
 
     return redirect(url_for('index'))
 
