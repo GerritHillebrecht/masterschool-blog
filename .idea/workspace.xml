@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abf226cc-1868-4344-a81a-705cbc81cfde" name="Changes" comment="[feat] added update functionality">
+    <list default="true" id="abf226cc-1868-4344-a81a-705cbc81cfde" name="Changes" comment="[feat] added like functionality. Even tho its pointless.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/posts.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/posts.json" afterDir="false" />
@@ -149,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730296650413</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[feat] added like functionality. Even tho its pointless.">
+      <option name="closed" value="true" />
+      <created>1730308459847</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730308459847</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -158,6 +166,7 @@
     <MESSAGE value="[feat] added add route" />
     <MESSAGE value="[feat] added remove route" />
     <MESSAGE value="[feat] added update functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] added update functionality" />
+    <MESSAGE value="[feat] added like functionality. Even tho its pointless." />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] added like functionality. Even tho its pointless." />
   </component>
 </project>
