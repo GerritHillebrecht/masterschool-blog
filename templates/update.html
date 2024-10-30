@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block css_imports %}
+<link rel="stylesheet" href={{url_for("static",filename="css/blog-post-update.css")}} type="text/css"/>
+{% endblock %}
+
+
+{% block content %}
+<div class="content card-container m-auto">
+
+    <div class="card m-auto" style="max-width: 800px">
+        <img src={{post.get("image")}} alt="" class="card-img-top"/>
+
+        <form method="post" class="p-4" action="/update/{{post.get('uuid')}}">
+            <div class="form-floating mb-3">
+                <input
+                        type="text"
+                        class="form-control"
+                        id="imageFloatingInput"
+                        name="image"
+                        placeholder="Send noooodes"
+                        value="{{post.get('image')}}"
+                        aria-describedby="imageHelpBlock"
+                >
+                <label for="imageFloatingInput">Hide your bad writing skills behind stock images.</label>
+                <div id="imageHelpBlock" class="form-text">
+                    Please provide a url containing the protocol (http/https).
+                </div>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="form-floating mb-3">
+                <input
+                        type="text"
+                        class="form-control"
+                        id="authorFloatingInput"
+                        name="author"
+                        placeholder="Who wrote this crap?"
+                        value="{{post.get('author')}}"
+                        aria-describedby="authorHelpBlock"
+                >
+                <label for="authorFloatingInput">The owner of the brain who wrote this.</label>
+                <div id="authorHelpBlock" class="form-text">
+                    Usually this is your name. You find it on your id.
+                </div>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="form-floating mb-3">
+                <input
+                        type="text"
+                        class="form-control"
+                        id="titleFloatingInput"
+                        name="title"
+                        placeholder="The freakin title you retarded fkn shit."
+                        value="{{post.get('title')}}"
+                        aria-describedby="titleHelpBlock"
+                >
+                <label for="titleFloatingInput">Whatever name was chosen for this pile of crap.</label>
+                <div id="titleHelpBlock" class="form-text">
+                    The title you think fits best.
+                </div>
+            </div>
+
+
+            <div class="form-floating mb-3">
+                <textarea
+                        class="form-control"
+                        id="contentFloatingInput"
+                        name="content"
+                        placeholder="Who wrote this crap?"
+                        style="height: 150px"
+                        aria-describedby="contentHelpBlock"
+
+                >{{post.get("content")}}</textarea>
+                <label for="contentFloatingInput">The actual brainfart that you want others to read.</label>
+                <div id="contentHelpBlock" class="form-text">
+                    Just go nuts on the body of the blog post. No wysiwyg for you. Don't try to make your shit look
+                    fancy.
+                </div>
+            </div>
+
+            <div class="seperator"></div>
+
+            <a href={{url_for("index")}} class="btn btn-outline-secondary" type="button">ION WNAT IT! Change is bad</a>
+            <button class="btn btn-primary" type="submit">Make the post even worse</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

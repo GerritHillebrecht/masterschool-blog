@@ -1,16 +1,8 @@
-main {
-    max-width: var(--max-content-width);
-    margin-inline: auto;
-
-    @media(screen and (max-width: 640px)) {
-        padding-line: 1rem;
-    }
-}
-
 .blog-posts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    padding-block: 3rem;
 }
 
 .blog-posts a:link {
@@ -32,4 +24,42 @@ main {
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.blog-posts .labeled {
+    background-color: #ccc;
+    border-radius: 0.25rem;
+    padding-inline: 0.25rem;
+    padding-block: 0.125rem;
+    width: fit-content;
+    font-size: 10px;
+}
+
+.hero-image-container {
+    position: relative;
+    aspect-ratio: 16 / 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.hero-image-container .hero-image {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset-0;
+    top: 0;
+}
+
+.hero-image-container .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-image-container .hero-content h1 {
+    font-size: 4.5rem;
 }

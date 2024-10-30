@@ -1,0 +1,15 @@
+.card-container {
+    min-height: 100vh;
+    padding-block: 2rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: var(--max-content-width, 1000px);
+}
+
+.card-container img {
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+    object-position: center;
+}

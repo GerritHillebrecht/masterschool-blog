@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block css_imports %}
+<link rel="stylesheet" href={{url_for("static",filename="css/blog-post.css")}} type="text/css"/>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container" style="max-width: 1200px">
+
+        <h1>{{ post.get("title") }}</h1>
+        <figure class="hero-image">
+            <picture>
+                <img src="{{post.get('image')}}"
+                     alt="Hero-Image"/>
+            </picture>
+        </figure>
+        <div class="">
+            <div class="">
+                {{ post.get("content") }}
+            </div>
+            <div class=""></div>
+        </div>
+    </div>
+
+</main>
+{% endblock %}
